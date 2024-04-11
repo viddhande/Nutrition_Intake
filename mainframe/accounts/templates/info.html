@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Tracker</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid bg-light text-dark py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Nutrition Tracker</h1>
+      <form id="nutritionForm" method="post" action="{% url 'info' %}">
+        {% csrf_token %}
+        <!-- Age -->
+        <div class="mb-3">
+          <label for="age" class="form-label">Age:</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <!-- Gender -->
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender:</label>
+          <select class="form-select" id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <!-- Height -->
+        <div class
+        <!-- Height -->
+        <div class="mb-3">
+          <label for="height" class="form-label">Height (cm):</label>
+          <input type="number" class="form-control" id="height" name="height" required>
+        </div>
+
+        <!-- Weight -->
+        <div class="mb-3">
+          <label for="weight" class="form-label">Weight (kg):</label>
+          <input type="number" class="form-control" id="weight" name="weight" required>
+        </div>
+
+        <!-- Number of Meals per Day -->
+        <div class="mb-3">
+          <label for="meals_per_day" class="form-label">Number of Meals per Day:</label>
+          <input type="number" class="form-control" id="meals_per_day" name="meals_per_day" required>
+        </div>
+
+        <!-- Meal Portion Size -->
+        <div class="mb-3">
+          <label for="meal_portion_size" class="form-label">Meal Portion Size:</label>
+          <select class="form-select" id="meal_portion_size" name="meal_portion_size" required>
+            <option value="">Select</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+
+        <!-- Dietary Preference -->
+        <div class="mb-3">
+          <label for="dietary_preference" class="form-label">Dietary Preference:</label>
+          <select class="form-select" id="dietary_preference" name="dietary_preference" required>
+            <option value="">Select</option>
+            <option value="veg">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+            <option value="vegan">Vegan</option>
+          </select>
+        </div>
+
+        <!-- Lifestyle Preference -->
+        <div class="mb-3">
+          <label for="lifestyle_preference" class="form-label">Lifestyle Preference:</label>
+          <select class="form-select" id="lifestyle_preference" name="lifestyle_preference" required>
+            <option value="">Select</option>
+            <option value="physical">Physical Job</option>
+            <option value="office">Office Job</option>
+            <option value="travel">Travel-oriented</option>
+            <option value="settled">Settled</option>
+          </select>
+        </div>
+
+        <!-- Existing Health Condition -->
+        <div class="mb-3">
+          <label for="existing_health_condition" class="form-label">Existing Health Condition:</label>
+          <select class="form-select" id="existing_health_condition" name="existing_health_condition">
+            <option value="">None</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="hypertension">Hypertension</option>
+            <option value="bp">High Blood Pressure (BP)</option>
+          </select>
+        </div>
+
+        <!-- Physical Activity Level -->
+        <div class="mb-3">
+          <label for="physical_activity_level" class="form-label">Physical Activity Level:</label>
+          <select class="form-select" id="physical_activity_level" name="physical_activity_level" required>
+            <option value="">Select</option>
+            <option value="less">Less</option>
+            <option value="fair">Fair</option>
+            <option value="good">Good</option>
+            <option value="excellent">Excellent</option>
+          </select>
+        </div>
+
+        <!-- Existing Allergens -->
+        <div class="mb-3">
+          <label for="existing_allergens" class="form-label">Existing Allergens:</label>
+          <select class="form-select" id="existing_allergens" name="existing_allergens">
+            <option value="">None</option>
+            <option value="milk">Milk products</option>
+            <option value="soya">Soya products</option>
+            <option value="eggs">Eggs</option>
+            <option value="nuts">Nuts</option>
+          </select>
+        </div>
+
+        <!-- Carbohydrate Intake -->
+        <div class="mb-3">
+          <label for="carbohydrate_intake" class="form-label">Carbohydrate Intake:</label>
+          <select class="form-select" id="carbohydrate_intake" name="carbohydrate_intake">
+            <option value="">Select</option>
+            <option value="less">Less</option>
+            <option value="medium">Medium</option>
+            <option value="more">More</option>
+          </select>
+          <small class="form-text text-muted">
+            Common foods with carbohydrates include:
+            <ul>
+              <li>Grains: Bread, pasta, rice, oats, barley, quinoa, couscous, bulgur, etc.</li>
+              <li>Cereals: Breakfast cereals, including oatmeal, cornflakes, bran flakes, etc.</li>
+              <li>Starchy Vegetables: Potatoes, sweet potatoes, corn, peas, squash, pumpkin, etc.</li>
+              <li>Legumes: Beans (black beans, kidney beans, pinto beans, etc.), lentils, chickpeas, etc.</li>
+              <li>Fruits: Apples, bananas, oranges, berries, grapes, mangoes, pineapples, etc.</li>
+              <li>Dairy: Milk, yogurt, kefir, and dairy-based desserts like ice cream and pudding (contain lactose, a natural sugar).</li>
+              <li>Sugary Snacks and Sweets: Cookies, cakes, pastries, candies, chocolates,
+                etc.</li>
+                    <li>Sugary Beverages: Regular sodas, fruit juices, fruit drinks, energy drinks, sports drinks, sweetened teas, etc.</li>
+                    <li>Sugary Condiments and Spreads: Jam, jelly, honey, maple syrup, chocolate spreads, etc.</li>
+                    <li>Processed Foods: Many processed foods contain added sugars and refined carbohydrates, including certain breakfast bars, snacks, and packaged desserts.</li>
+                  </ul>
+                </small>
+              </div>
+
+              <!-- Protein Intake -->
+              <div class="mb-3">
+                <label for="protein_intake" class="form-label">Protein Intake:</label>
+                <select class="form-select" id="protein_intake" name="protein_intake">
+                  <option value="">Select</option>
+                  <option value="less">Less</option>
+                  <option value="medium">Medium</option>
+                  <option value="more">More</option>
+                </select>
+                <small class="form-text text-muted">
+                  Common foods with protein include:
+                  <ul>
+                    <li>Meat: Beef, chicken, pork, lamb, turkey, etc.</li>
+                    <li>Seafood: Fish (salmon, tuna, trout, etc.), shrimp, scallops, crab, etc.</li>
+                    <li>Eggs: Chicken eggs are a common source of protein.</li>
+                    <li>Dairy: Cheese (cheddar, mozzarella, feta, etc.), cottage cheese, Greek yogurt, etc.</li>
+                    <li>Legumes: Beans (black beans, kidney beans, chickpeas, etc.), lentils, peas, etc.</li>
+                    <li>Nuts and seeds: Almonds, peanuts, walnuts, sunflower seeds, chia seeds, etc.</li>
+                    <li>Soy products: Tofu, tempeh, edamame, soy milk, etc.</li>
+                  </ul>
+                </small>
+              </div>
+
+              <!-- Fats Intake -->
+              <div class="mb-3">
+                <label for="fats_intake" class="form-label">Fats Intake:</label>
+                <select class="form-select" id="fats_intake" name="fats_intake">
+                  <option value="">Select</option>
+                  <option value="less">Less</option>
+                  <option value="medium">Medium</option>
+                  <option value="more">More</option>
+                </select>
+                <small class="form-text text-muted">
+                  Common foods with fats include:
+                  <ul>
+                    <li>Oils: Olive oil, coconut oil, avocado oil, canola oil, etc.</li>
+                    <li>Butter and ghee: Used in cooking and baking.</li>
+                    <li>Avocado: A source of healthy fats.</li>
+                    <li>Nuts and seeds: Almonds, cashews, peanuts, sesame seeds, etc.</li>
+                    <li>Fatty fish: Salmon, mackerel, sardines, trout, etc.</li>
+                    <li>Nut butters: Peanut butter, almond butter, etc.</li>
+                    <li>Cheese: Some cheeses are higher in fat content, such as cheddar, brie, and gouda.</li>
+                    <li>Whole milk: Contains fat unless it's skim or low-fat milk.</li>
+                    <li>Dark chocolate: Contains cocoa butter, which is a source of healthy fats.</li>
+                  </ul>
+                </small>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      document.getElementById("nutritionForm").addEventListener("submit", function() {
+          window.location.href = "{% url 'success_page' %}";
+      });
+      </script>
+
+      </body>
+      </html>

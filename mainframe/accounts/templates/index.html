@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutri Track</title>
+    <!-- Bootstrap CDN link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-dark-lilac">
+
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand text-yellow" href="#"><span class="font-weight-bold" style="font-size: 3rem; font-family: cursive;">Nutri Track</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'login' %}" style="font-size: 1.2rem;">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'register' %}" style="font-size: 1.2rem;">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <a href="{% url 'info' %}" class="card text-white bg-primary h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Current Dietary Survey</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="{% url 'index_recipe' %}" class="card text-white bg-success h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Cook your dish here!</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://mediafiles.botpress.cloud/a63d8699-7b47-464e-9330-e840be54a7f8/webchat/bot.html" class="card text-white bg-danger h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Health Chatbot</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <a href="{% url 'mainframe' %}" class="card text-white bg-warning h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Calculate your BMI</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <a href="{% url 'sparkle' %}" class="card text-white bg-secondary h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Spark your soul</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

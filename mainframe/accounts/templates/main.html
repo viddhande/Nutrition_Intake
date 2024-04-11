@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+</head>
+<body>
+    <h1>Input Form</h1>
+    <form method="post" action="{% url 'info' %}">
+        {% csrf_token %}
+        <label for="dietary_preference">Dietary Preference:</label>
+        <select id="dietary_preference" name="dietary_preference">
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non_vegetarian">Non-Vegetarian</option>
+            <option value="vegan">Vegan</option>
+        </select><br><br>
+
+        <label for="health_condition">Health Condition:</label>
+        <select id="health_condition" name="health_condition">
+            <option value="diabetes">Diabetes</option>
+            <option value="bp">Blood Pressure</option>
+            <option value="hypertension">Hypertension</option>
+        </select><br><br>
+
+        <label for="lifestyle">Lifestyle Preference:</label>
+        <select id="lifestyle" name="lifestyle">
+            <option value="office_job">Office Job</option>
+            <option value="travel_oriented">Travel-Oriented</option>
+            <option value="settled">Settled</option>
+            <option value="physical_job">Physical Job</option>
+        </select><br><br>
+
+        <label for="existing_allergies">Existing Allergies:</label>
+        <select id="existing_allergies" name="existing_allergies">
+            <option value="milk_products">Milk Products</option>
+            <option value="soya_products">Soya Products</option>
+            <option value="nuts">Nuts</option>
+            <option value="eggs">Eggs</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
